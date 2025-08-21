@@ -4,6 +4,7 @@ import session from "express-session";
 
 import { connectDB } from "./config/db.js";
 import userRoutes from "./routes/user.routes.js"
+import taskRoutes from "./routes/task.routes.js"
 
 
 dotenv.config();
@@ -30,6 +31,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/user" , userRoutes)
+app.use("/api/task" , taskRoutes)
 
 connectDB()
   .then(() => {
